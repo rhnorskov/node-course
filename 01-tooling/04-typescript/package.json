@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "ts-node --respawn src",
+    "start": "node build",
+    "build": "tsc",
+    "prestart": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^13.1.7",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.4"
+  }
+}
