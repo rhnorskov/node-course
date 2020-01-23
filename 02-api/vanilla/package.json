@@ -1,0 +1,12 @@
+{
+  "private": false,
+  "scripts": {
+    "dev": "tsnd --respawn src",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^13.5.0",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.7.5"
+  }
+}
