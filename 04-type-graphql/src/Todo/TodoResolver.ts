@@ -9,12 +9,12 @@ import { Todo } from "./Todo";
 export class TodoResolver {
   @Query(returns => Todo)
   async todo(@Arg("id") id: string) {
-    return db.getCollection("todos").findOne({ id });
+    return db.getCollection<Todo>("todos").findOne({ id });
   }
 
   @Query(returns => [Todo])
   async todos() {
-    return db.getCollection("todos").find();
+    return db.getCollection<Todo>("todos").find();
   }
 
   @Mutation(returns => Todo)
@@ -25,12 +25,12 @@ export class TodoResolver {
       completed: false
     };
 
-    return db.getCollection("todos").insert(todo);
+    return db.getCollection<Todo>("todos").insert(todo);
   }
 
   @Mutation(returns => Todo)
   async completeTodo(@Arg("id") id: string) {
-    const todos = db.getCollection("todos");
+    const todos = db.getCollection<Todo>("todos");
     const todo = todos.findOne({ id });
 
     todo.completed = true;
